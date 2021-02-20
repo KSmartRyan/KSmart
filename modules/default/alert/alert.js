@@ -29,6 +29,7 @@ Module.register("alert", {
 	getTranslations: function () {
 		return {
 			en: "translations/en.json",
+			ko: "translations/ko.json"
 		};
 	},
 	show_notification: function (message) {
