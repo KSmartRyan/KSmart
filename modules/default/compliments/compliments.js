@@ -10,7 +10,7 @@ Module.register("compliments", {
 		compliments: {
 			anytime: ["안녕하세요"],
 			morning: ["좋은 아침입니다~"],
-			afternoon: ["Hello, beauty!", "You look sexy!", "Looking good today!"],
+			afternoon: ["좋은 아침이야 "],
 			evening: [ "오늘도 수고했어"],
 			"....-01-01": ["Happy new year!"]
 		},
