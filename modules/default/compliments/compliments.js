@@ -11,7 +11,7 @@ Module.register("compliments", {
 			anytime: ["안녕하세요"],
 			morning: ["좋은 아침입니다~"],
 			afternoon: ["Hello, beauty!", "You look sexy!", "Looking good today!"],
-			evening: ["Wow, you look hot!", "You look nice!", "Hi, sexy!"],
+			evening: [ "오늘도 수고했어"],
 			"....-01-01": ["Happy new year!"]
 		},
 		updateInterval: 30000,
