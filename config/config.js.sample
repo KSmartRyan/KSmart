@@ -90,8 +90,8 @@ var config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "오늘 속보",
+						url: "https://www.yonhapnewstv.co.kr/browse/feed"
 					}
 				],
 				showSourceTitle: true,
