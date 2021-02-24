@@ -100,6 +100,13 @@ var config = {
 				broadcastNewsUpdates: true
 			}
 		},
+		{
+			module: 'MMM-SmartTouch',
+			position: 'bottom_center',    // This can be any of the regions.(bottom-center Recommended)
+			config: {
+				// The config property is optional.
+				}
+		},
 	]
 };
 
