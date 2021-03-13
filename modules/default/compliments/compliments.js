@@ -211,5 +211,11 @@ Module.register("compliments", {
 		if (notification === "CURRENTWEATHER_DATA") {
 			this.setCurrentWeatherType(payload.data);
 		}
-	}
+		if(notification === "COMPLIMENTS_HIDE"){
+			this.hide(1000);
+		}
+		if(notification === "COMPLIMENTS_SHOW"){
+			this.show(1000);
+		}
+	},
 });

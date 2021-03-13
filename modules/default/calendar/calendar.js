@@ -71,7 +71,14 @@ Module.register("calendar", {
 	getScripts: function () {
 		return ["moment.js"];
 	},
-
+	notificationReceived: function (notification, payload, sender) {
+		if(notification === "CALENDAR_HIDE"){
+			this.hide(1000);
+		}
+		if(notification === "CALENDAR_SHOW"){
+			this.show(1000);
+		}
+	},
 	// Define required translations.
 	getTranslations: function () {
 		// The translations for the default modules are defined in the core translation files.

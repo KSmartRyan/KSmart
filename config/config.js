@@ -107,6 +107,14 @@ var config = {
 				// The config property is optional.
 				}
 		},
+		{
+			module: 'youtube',
+			position: 'top_center',
+			// hidden: true,
+			config: {
+				appid: "AIzaSyDLecu5uQjRitTPRNCt_BMSym3hRhsoqBk"
+			}
+		}
 	]
 };
 

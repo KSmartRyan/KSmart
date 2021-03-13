@@ -399,6 +399,12 @@ Module.register("newsfeed", {
 				url: this.getActiveItemURL()
 			});
 		}
+		else if(notification === "NEWSFEED_HIDE"){
+			this.hide(1000);
+		}
+		else if(notification === "NEWSFEED_SHOW"){
+			this.show(1000);
+		}
 	},
 
 	showFullArticle: function () {

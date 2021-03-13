@@ -257,7 +257,7 @@ var MM = (function () {
 				// below other modules. This works way better than adjusting
 				// the .display property.
 				moduleWrapper.style.position = "fixed";
-
+			
 				updateWrapperStates();
 
 				if (typeof callback === "function") {
