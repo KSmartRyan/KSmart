@@ -316,10 +316,10 @@ Module.register("currentweather", {
 			this.indoorHumidity = this.roundValue(payload);
 			this.updateDom(this.config.animationSpeed);
 		}
-		if(notification === "CURRENTWEATHER_HIDE"){
+		if (notification === "CURRENTWEATHER_HIDE") {
 			this.hide(1000);
 		}
-		if(notification === "CURRENTWEATHER_SHOW"){
+		if (notification === "CURRENTWEATHER_SHOW") {
 			this.show(1000);
 		}
 	},

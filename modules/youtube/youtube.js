@@ -1,10 +1,10 @@
-Module.register("youtube",{
-    getStyles: function () {
+Module.register("youtube", {
+	getStyles: function () {
 		return ["youtube.css"];
 	},
-	notificationReceived: function(notification, payload, sender) {
-		if (notification === "YOUTUBE"){
-			if(this.hidden){
+	notificationReceived: function (notification, payload, sender) {
+		if (notification === "YOUTUBE") {
+			if (this.hidden) {
 				this.show(1000);
 				this.sendNotification("CLOCK_HIDE", {});
 				this.sendNotification("CALENDAR_HIDE", {});
@@ -12,8 +12,7 @@ Module.register("youtube",{
 				this.sendNotification("CURRENTWEATHER_HIDE", {});
 				this.sendNotification("WEATHERFORECAST_HIDE", {});
 				this.sendNotification("NEWSFEED_HIDE", {});
-			}
-			else {
+			} else {
 				this.hide(1000);
 				this.sendNotification("CLOCK_SHOW", {});
 				this.sendNotification("CALENDAR_SHOW", {});
@@ -24,11 +23,11 @@ Module.register("youtube",{
 			}
 		}
 	},
-	getDom: function() {
+	getDom: function () {
 		this.hide();
 		const listCount = 20;
 		const wrapper = document.createElement("div");
-        wrapper.className = "wrapper";
+		wrapper.className = "wrapper";
 		const listContainer = document.createElement("ul");
 		listContainer.className = "list-container";
 		const container = document.createElement("div");
@@ -54,9 +53,9 @@ Module.register("youtube",{
 		wrapper.appendChild(videoContainer);
 		container.appendChild(search);
 		container.appendChild(searchBtn);
-		videoContainer.appendChild(player); 
+		videoContainer.appendChild(player);
 		// 영상 목록
-		for(let i=0;i<listCount;i++){
+		for (let i = 0; i < listCount; i++) {
 			li = document.createElement("li");
 			li.id = "playlist";
 			img = document.createElement("img");
@@ -76,18 +75,18 @@ Module.register("youtube",{
 		}
 		listContainer.style.display = "none";
 
-		var tag = document.createElement('script');
+		var tag = document.createElement("script");
 
 		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
+		var firstScriptTag = document.getElementsByTagName("script")[0];
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 		// 목록에서 영상 선택했을 때 영상 재생
-		function playVideo(response){
+		function playVideo(response) {
 			let lists = listContainer.childNodes;
 			let src = "http://www.youtube.com/embed/";
-			for(let i=0;i<lists.length;i++){
-				lists[i].addEventListener('click', () => {
+			for (let i = 0; i < lists.length; i++) {
+				lists[i].addEventListener("click", () => {
 					listContainer.style.display = "none";
 					container.style.display = "flex";
 					videoContainer.style.display = "block";
@@ -107,13 +106,13 @@ Module.register("youtube",{
 				listChild = lists[index].childNodes;
 				listChild[0].src = item.snippet.thumbnails.default.url;
 				listChildChild = listChild[1].childNodes;
-				listChildChild[0].innerHTML =  item.snippet.title;
+				listChildChild[0].innerHTML = item.snippet.title;
 				listChildChild[1].innerHTML = item.snippet.channelTitle;
 			});
 			console.log(response);
 			playVideo(response);
 		}
-		
+
 		// youtube api에 검색어로 요청보내고 받음
 		function updateYoutubeList() {
 			let url = "https://www.googleapis.com/youtube/v3/search?key=" + "AIzaSyDLecu5uQjRitTPRNCt_BMSym3hRhsoqBk" + "&part=snippet&q=" + search.value + "&maxResults=" + String(listCount);
@@ -124,19 +123,19 @@ Module.register("youtube",{
 					if (this.status === 200) {
 						processYoutubeList(JSON.parse(this.response));
 						// } else if (this.status === 401) {
-							// 	self.updateDom(self.config.animationSpeed);
-							
-							// 	if (self.config.forecastEndpoint === "forecast/daily") {
-								// 		self.config.forecastEndpoint = "forecast";
-					// 		Log.warn(self.name + ": Your AppID does not support long term forecasts. Switching to fallback endpoint.");
-					// 	}
-					
-					// 	retry = true;
-				} else {
-					Log.error(self.name + ": 모듈 로드 불가");
-				}
-				
-				// if (retry) {
+						// 	self.updateDom(self.config.animationSpeed);
+
+						// 	if (self.config.forecastEndpoint === "forecast/daily") {
+						// 		self.config.forecastEndpoint = "forecast";
+						// 		Log.warn(self.name + ": Your AppID does not support long term forecasts. Switching to fallback endpoint.");
+						// 	}
+
+						// 	retry = true;
+					} else {
+						Log.error(self.name + ": 모듈 로드 불가");
+					}
+
+					// if (retry) {
 					// 	self.scheduleUpdate(self.loaded ? -1 : self.config.retryDelay);
 					// }
 				}
@@ -144,15 +143,13 @@ Module.register("youtube",{
 			youtubeRequest.send();
 		}
 
-		
 		// google youtube api에서 검색어의 목록을 가져와서 보여줌
 		function showList() {
 			updateYoutubeList();
 		}
 		searchBtn.addEventListener("click", () => showList());
-		
+
 		// wrapper.innerHTML = this.config.text;
 		return wrapper;
-	},
-	
+	}
 });

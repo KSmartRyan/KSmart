@@ -398,11 +398,9 @@ Module.register("newsfeed", {
 				desc: this.newsItems[this.activeItem].description,
 				url: this.getActiveItemURL()
 			});
-		}
-		else if(notification === "NEWSFEED_HIDE"){
+		} else if (notification === "NEWSFEED_HIDE") {
 			this.hide(1000);
-		}
-		else if(notification === "NEWSFEED_SHOW"){
+		} else if (notification === "NEWSFEED_SHOW") {
 			this.show(1000);
 		}
 	},

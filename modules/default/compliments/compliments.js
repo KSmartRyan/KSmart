@@ -11,7 +11,7 @@ Module.register("compliments", {
 			anytime: ["안녕하세요"],
 			morning: ["좋은 아침입니다~"],
 			afternoon: ["좋은 아침이야 "],
-			evening: [ "오늘도 수고했어"],
+			evening: ["오늘도 수고했어"],
 			"....-01-01": ["Happy new year!"]
 		},
 		updateInterval: 30000,
@@ -211,11 +211,11 @@ Module.register("compliments", {
 		if (notification === "CURRENTWEATHER_DATA") {
 			this.setCurrentWeatherType(payload.data);
 		}
-		if(notification === "COMPLIMENTS_HIDE"){
+		if (notification === "COMPLIMENTS_HIDE") {
 			this.hide(1000);
 		}
-		if(notification === "COMPLIMENTS_SHOW"){
+		if (notification === "COMPLIMENTS_SHOW") {
 			this.show(1000);
 		}
-	},
+	}
 });

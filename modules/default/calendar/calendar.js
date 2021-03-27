@@ -72,10 +72,10 @@ Module.register("calendar", {
 		return ["moment.js"];
 	},
 	notificationReceived: function (notification, payload, sender) {
-		if(notification === "CALENDAR_HIDE"){
+		if (notification === "CALENDAR_HIDE") {
 			this.hide(1000);
 		}
-		if(notification === "CALENDAR_SHOW"){
+		if (notification === "CALENDAR_SHOW") {
 			this.show(1000);
 		}
 	},

@@ -42,10 +42,10 @@ Module.register("clock", {
 		return ["clock_styles.css"];
 	},
 	notificationReceived: function (notification, payload, sender) {
-		if(notification === "CLOCK_HIDE"){
+		if (notification === "CLOCK_HIDE") {
 			this.hide(1000);
 		}
-		if(notification === "CLOCK_SHOW"){
+		if (notification === "CLOCK_SHOW") {
 			this.show(1000);
 		}
 	},
