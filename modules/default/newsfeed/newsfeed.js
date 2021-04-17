@@ -85,6 +85,8 @@ Module.register("newsfeed", {
 	// Override dom generator.
 	getDom: function () {
 		const wrapper = document.createElement("div");
+		this.dom = wrapper;
+		if (this.isStop == true) return;
 
 		if (this.config.feedUrl) {
 			wrapper.className = "small bright";
@@ -399,9 +401,9 @@ Module.register("newsfeed", {
 				url: this.getActiveItemURL()
 			});
 		} else if (notification === "NEWSFEED_HIDE") {
-			this.hide(1000);
+			this.smartHide();
 		} else if (notification === "NEWSFEED_SHOW") {
-			this.show(1000);
+			this.smartShow();
 		}
 	},
 
@@ -417,5 +419,18 @@ Module.register("newsfeed", {
 		this.timer = null;
 		Log.debug(this.name + " - showing " + this.isShowingDescription ? "article description" : "full article");
 		this.updateDom(100);
+	},
+	smartHide: function () {
+		this.dom.style.visibility = "hidden";
+		this.isStop = true;
+		this.timer = null;
+		clearInterval(this.timer);
+	},
+	smartShow: function () {
+		this.dom.style.visibility = "visible";
+		this.isStop = false;
+		if (!this.timer) {
+			this.scheduleUpdateInterval();
+		}
 	}
 });
