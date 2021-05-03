@@ -114,6 +114,14 @@ var config = {
 			config: {
 				appid: "AIzaSyDLecu5uQjRitTPRNCt_BMSym3hRhsoqBk"
 			}
+		},
+		{
+			module: 'HomeTraining',
+			position: 'top_center',
+			config: {
+				appid: "AIzaSyDLecu5uQjRitTPRNCt_BMSym3hRhsoqBk"
+			}
+
 		}
 	]
 };
