@@ -8,10 +8,10 @@ Module.register("compliments", {
 	// Module config defaults.
 	defaults: {
 		compliments: {
-			anytime: ["Hey there sexy!"],
-			morning: ["Good morning, handsome!", "Enjoy your day!", "How was your sleep?"],
-			afternoon: ["Hello, beauty!", "You look sexy!", "Looking good today!"],
-			evening: ["Wow, you look hot!", "You look nice!", "Hi, sexy!"],
+			anytime: ["안녕하세요"],
+			morning: ["좋은 아침입니다~"],
+			afternoon: ["좋은 아침이야 "],
+			evening: ["오늘도 수고했어"],
 			"....-01-01": ["Happy new year!"]
 		},
 		updateInterval: 30000,
@@ -210,6 +210,12 @@ Module.register("compliments", {
 	notificationReceived: function (notification, payload, sender) {
 		if (notification === "CURRENTWEATHER_DATA") {
 			this.setCurrentWeatherType(payload.data);
+		}
+		if (notification === "COMPLIMENTS_HIDE") {
+			this.hide(1000);
+		}
+		if (notification === "COMPLIMENTS_SHOW") {
+			this.show(1000);
 		}
 	}
 });

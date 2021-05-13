@@ -41,6 +41,14 @@ Module.register("clock", {
 	getStyles: function () {
 		return ["clock_styles.css"];
 	},
+	notificationReceived: function (notification, payload, sender) {
+		if (notification === "CLOCK_HIDE") {
+			this.hide(1000);
+		}
+		if (notification === "CLOCK_SHOW") {
+			this.show(1000);
+		}
+	},
 	// Define start sequence.
 	start: function () {
 		Log.info("Starting module: " + this.name);

@@ -286,7 +286,6 @@ Module.register("currentweather", {
 
 		return this.data.header ? this.data.header : "";
 	},
-
 	// Override notification handler.
 	notificationReceived: function (notification, payload, sender) {
 		if (notification === "DOM_OBJECTS_CREATED") {
@@ -316,6 +315,12 @@ Module.register("currentweather", {
 		if (notification === "INDOOR_HUMIDITY") {
 			this.indoorHumidity = this.roundValue(payload);
 			this.updateDom(this.config.animationSpeed);
+		}
+		if (notification === "CURRENTWEATHER_HIDE") {
+			this.hide(1000);
+		}
+		if (notification === "CURRENTWEATHER_SHOW") {
+			this.show(1000);
 		}
 	},
 

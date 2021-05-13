@@ -235,6 +235,12 @@ Module.register("weatherforecast", {
 				}
 			}
 		}
+		if (notification === "WEATHERFORECAST_HIDE") {
+			this.hide(1000);
+		}
+		if (notification === "WEATHERFORECAST_SHOW") {
+			this.show(1000);
+		}
 	},
 
 	/* updateWeather(compliments)
