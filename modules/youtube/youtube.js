@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 Module.register("youtube", {
 	getStyles: function () {
 		return ["youtube.css"];
@@ -27,7 +28,7 @@ Module.register("youtube", {
 		this.hide();
 		const listCount = 20;
 		const wrapper = document.createElement("div");
-		wrapper.className = "wrapper";
+		wrapper.className = "youtube__wrapper";
 		const listContainer = document.createElement("ul");
 		listContainer.className = "list-container";
 		const container = document.createElement("div");
@@ -48,6 +49,8 @@ Module.register("youtube", {
 		player.type = "text/html";
 		player.width = "648";
 		player.height = "367.63";
+		player.hasAttribute("allowfullscreen");
+		player.setAttribute("allowFullScreen", "");
 		wrapper.appendChild(listContainer);
 		wrapper.appendChild(container);
 		wrapper.appendChild(videoContainer);

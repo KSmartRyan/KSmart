@@ -119,7 +119,6 @@ sup {
 }
 
 .region.bottom .module {
-  margin-top: 30px;
   margin-bottom: 0;
 }
 
@@ -167,8 +166,11 @@ sup {
   margin-bottom: 25px;
 }
 
-.region.bottom .container {
-  margin-top: 25px;
+.region.bottom .container #module_7_newsfeed .module-content {
+  position: absolute;
+  bottom: 45px;
+  width: 100%;
+  text-align: center;
 }
 
 .region.top .container:empty {

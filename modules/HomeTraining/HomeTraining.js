@@ -34,7 +34,6 @@ Module.register("HomeTraining", {
 
 		const menuDiv = document.createElement("div");
 		menuDiv.className = "TPose_Size";
-		
 
 		const TPoseImg = document.createElement("img");
 
@@ -45,14 +44,12 @@ Module.register("HomeTraining", {
 
 		menuDiv.addEventListener("click", () => this.cameraOn());
 
-
 		const footer = document.createElement("div");
 		footer.className = "description-container";
 
-		const footerMenu = document.createElement("div"); 
+		const footerMenu = document.createElement("div");
 		footerMenu.className = "menu__description";
 		footerMenu.innerHTML = "T자세이다.";
-
 
 		menuDiv.appendChild(TPoseImg);
 		menuDiv.appendChild(TPoseCameraVideo);
@@ -66,22 +63,22 @@ Module.register("HomeTraining", {
 
 		return wrapper;
 	},
-	cameraOn : function(){
-		this.TposeHeader.style.visibility = "hidden";
-		this.TPoseImg.style.display = "none"
+	cameraOn: function () {
+		this.TposeHeader.style.display = "none";
+		this.TPoseImg.style.display = "none";
 
 		var video = document.querySelector("#videoElement");
 
 		if (navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                video.srcObject = stream;
-				video.play();
-
-            }).catch(function (error) {
-                console.log(error);
-            })
+			navigator.mediaDevices
+				.getUserMedia({ video: true })
+				.then(function (stream) {
+					video.srcObject = stream;
+					video.play();
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 		}
 	}
-	
 });

@@ -1,3 +1,14 @@
+.HomeTraining .module-header + .module-content {
+  width: 625px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 430px;
+  margin: 0px auto;
+  position: relative;
+}
+
 .HomeHeader {
   font-size: 45px;
   text-align: center;
@@ -6,9 +17,8 @@
 }
 
 .TPose_Size {
-  margin: 0px 40px; 
-  width: 600px;
-  height: 375px;
+  width: 100%;
+  height: 100%;
 }
 .description-container {
   display: inline-flex;
@@ -20,5 +30,15 @@
   border-radius: 50px;
   padding: 0 10px;
   background: #fff;
-  
+}
+
+#videoElement {
+  height: 100%;
+  width: 100%;
+}
+
+.menu__description {
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
 }

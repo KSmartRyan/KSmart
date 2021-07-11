@@ -42,7 +42,9 @@ var MM = (function () {
 
 			if (typeof module.getHeader() === "undefined" || module.getHeader() !== "") {
 				moduleHeader.style.display = "none;";
+				moduleHeader.style.display = "none;";
 			} else {
+				moduleHeader.style.display = "block;";
 				moduleHeader.style.display = "block;";
 			}
 
